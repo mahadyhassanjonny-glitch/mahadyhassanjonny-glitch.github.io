@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur Shafi Contracting Co. | Automatic Door Solutions Riyadh</title>
+    <!-- Google Fonts for English and Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --accent: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --whatsapp: #25d366;
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Cairo', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Language Toggle System */
+        [dir="rtl"] {
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+
+        .lang-en { display: block; }
+        .lang-ar { display: none; }
+
+        [dir="rtl"] .lang-en { display: none; }
+        [dir="rtl"] .lang-ar { display: block; }
+
+        span.lang-en { display: inline; }
+        span.lang-ar { display: none; }
+        [dir="rtl"] span.lang-en { display: none; }
+        [dir="rtl"] span.lang-ar { display: inline; }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--bg-dark);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-btn {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-call {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-call:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .company-tag {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp);
+            color: #ffffff;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        [dir="rtl"] .floating-whatsapp {
+            right: auto;
+            left: 25px;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Layout Grid Sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--bg-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.06);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--bg-dark);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Feature Table */
+        .features-table-wrapper {
+            overflow-x: auto;
+            background: #ffffff;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        [dir="rtl"] table {
+            text-align: right;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--bg-dark);
+            font-weight: 700;
+        }
+
+        /* Coverage Bar */
+        .coverage-box {
+            background: #e0f2fe;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-top: 2rem;
+        }
+
+        [dir="rtl"] .coverage-box {
+            border-left: none;
+            border-right: 4px solid var(--primary);
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 0.8rem;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .container { padding: 2.5rem 1rem; }
+            .contact-section { padding: 1.5rem; }
+            .floating-whatsapp span { display: none; }
+            .floating-whatsapp { padding: 14px; border-radius: 50%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                NUR SHAFI CONTRACTING CO.
+                <span class="lang-en">Automatic Door Solutions</span>
+                <span class="lang-ar">حلول الأبواب الأوتوماتيكية</span>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">العربية</button>
+                <a href="tel:+966500000000" class="btn-call">
+                    <span class="lang-en">📞 Call</span>
+                    <span class="lang-ar">📞 اتصل الآن</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="company-tag">Nur Shafi Contracting Company</div>
+            
+            <h1 class="lang-en">Professional Automatic Door Installation & Maintenance in Riyadh</h1>
+            <h1 class="lang-ar">خدمات تركيب وصيانة الأبواب الأوتوماتيكية في الرياض</h1>
+
+            <p class="lang-en">Fast, reliable installation, repair, and preventive maintenance for all types of automatic doors, roll-up shutters, and access control barriers across Saudi Arabia.</p>
+            <p class="lang-ar">خدمات سريعة وموثوقة لتركيب وإصلاح وصيانة جميع أنواع الأبواب الأوتوماتيكية، الشتر، والحواجز الأمنية في جميع أنحاء المملكة.</p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    <span class="lang-en">Request Free Quote</span>
+                    <span class="lang-ar">احصل على عرض سعر</span>
+                </a>
+                <a id="heroWhatsappBtn" href="https://wa.me/966500000000?text=Hello%20Nur%20Shafi%20Contracting%2C%20I%20am%20contacting%20you%20from%20your%20website%20regarding%20an%20automatic%20door%20inquiry%20in%20Riyadh." target="_blank" class="btn-whatsapp">
+                    <span class="lang-en">💬 Chat on WhatsApp</span>
+                    <span class="lang-ar">💬 تواصل عبر الواتساب</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container">
+        <div class="section-title">
+            <h2 class="lang-en">Our Services</h2>
+            <h2 class="lang-ar">خدماتنا الرئيسية</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="card">
+                <div class="card-icon">🌀</div>
+                <h3 class="lang-en">Roll-Up & Shutter Doors</h3>
+                <h3 class="lang-ar">أبواب الرول والشتر</h3>
+                <p class="lang-en">Complete supply, installation, and motor repair for commercial storefronts, industrial warehouses, and residential garages.</p>
+                <p class="lang-ar">توريد وتركيب وإصلاح محركات أبواب الرول والشتر للمحلات التجارية، المستودعات الصناعية، وكراجات المنازل.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚗</div>
+                <h3 class="lang-en">Overhead Sectional Doors</h3>
+                <h3 class="lang-ar">الأبواب المقطعية (الأوفر هيد)</h3>
+                <p class="lang-en">Durable, insulated overhead doors ideal for residential villas, commercial loading bays, and warehouse entrances.</p>
+                <p class="lang-ar">أبواب مقطعية معزولة ومتينة مثالية للفيلات السكنية، مناطق التحميل والتفريغ التجارية، ومداخل المستودعات.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚪</div>
+                <h3 class="lang-en">Automatic Sliding Doors</h3>
+                <h3 class="lang-ar">أبواب السحب الزجاجية</h3>
+                <p class="lang-en">Modern motion-sensor glass sliding doors for retail stores, shopping malls, corporate offices, and medical centers.</p>
+                <p class="lang-ar">أبواب زجاجية سحاب بحساسات حركة حديثة للمتاجر، المراكز التجارية، والمكاتب الشركاتية، والمستشفيات.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚧</div>
+                <h3 class="lang-en">Parking Barriers & Gates</h3>
+                <h3 class="lang-ar">حواجز المواقف والبوابات</h3>
+                <p class="lang-en">Automatic boom barriers, sliding gate openers, and access control systems for private compounds and parking lots.</p>
+                <p class="lang-ar">تركيب وصيانة مصدات وحواجز المواقف الأوتوماتيكية، ومحركات البوابات، وأنظمة التحكم بالدخول للمجمعات والمواقف.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="container" style="padding-top: 0;">
+        <div class="section-title">
+            <h2 class="lang-en">Why Choose Us?</h2>
+            <h2 class="lang-ar">لماذا تختارنا؟</h2>
+        </div>
+
+        <div class="features-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="lang-en">Feature</th>
+                        <th class="lang-ar">الميزة</th>
+                        <th class="lang-en">Our Service Promise</th>
+                        <th class="lang-ar">التزامنا بالخدمة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong><span class="lang-en">Fast Response</span><span class="lang-ar">استجابة سريعة</span></strong></td>
+                        <td><span class="lang-en">On-site response across all Riyadh districts.</span><span class="lang-ar">خدمة وصول سريعة لكافة أحياء ومناطق الرياض.</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong><span class="lang-en">All Door Models</span><span class="lang-ar">جميع الأنواع والماركات</span></strong></td>
+                        <td><span class="lang-en">Full service for motors, sensors, and genuine spare parts.</span><span class="lang-ar">توفير جميع قطع الغيار والمحركات والحساسات الأصلية.</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong><span class="lang-en">Saudi Climate Durable</span><span class="lang-ar">مقاومة للمناخ</span></strong></td>
+                        <td><span class="lang-en">Heavy-duty systems built to withstand high heat and dust.</span><span class="lang-ar">أنظمة عالية الجودة مصممة لتحمل الحرارة والغبار.</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong><span class="lang-en">Competitive Rates</span><span class="lang-ar">أسعار منافسة</span></strong></td>
+                        <td><span class="lang-en">Fair and transparent pricing with free site inspections.</span><span class="lang-ar">أسعار منافسة وشفافة مع معاينة مجانية للموقع.</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="coverage-box">
+            <p class="lang-en">📍 <strong>Service Coverage:</strong> We serve all areas in <strong>Riyadh, Saudi Arabia</strong>, including North Riyadh (Olaya, Malqa, Yasmin), East & West Riyadh, and the 1st, 2nd, and 3rd Industrial Cities.</p>
+            <p class="lang-ar">📍 <strong>مناطق الخدمة:</strong> نغطي جميع أحياء ومناطق <strong>مدينة الرياض</strong>، بما في ذلك شمال الرياض (العليا، الملقا، الياسمين)، شرق وغرب الرياض، والمدن الصناعية الأولى والثانية والثالثة.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="container" id="contact">
+        <div class="contact-section">
+            <div class="section-title" style="margin-bottom: 1.5rem;">
+                <h2 class="lang-en">Get a Free Quote</h2>
+                <h2 class="lang-ar">طلب عرض سعر مجاني</h2>
+            </div>
+
+            <form onsubmit="event.preventDefault(); alert('Request submitted successfully!');">
+                <div class="form-group">
+                    <label class="lang-en">Your Name</label>
+                    <label class="lang-ar">الاسم الكريم</label>
+                    <input type="text" required placeholder="...">
+                </div>
+
+                <div class="form-group">
+                    <label class="lang-en">Phone Number (Saudi Arabia)</label>
+                    <label class="lang-ar">رقم الجوال</label>
+                    <input type="tel" required placeholder="05XXXXXXXX">
+                </div>
+
+                <div class="form-group">
+                    <label class="lang-en">Email Address</label>
+                    <label class="lang-ar">البريد الإلكتروني</label>
+                    <input type="email" placeholder="name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="lang-en">Service Required</label>
+                    <label class="lang-ar">نوع الخدمة المطلوب</label>
+                    <select>
+                        <option class="lang-en">New Installation</option>
+                        <option class="lang-ar">تركيب جديد</option>
+                        <option class="lang-en">Repair & Maintenance</option>
+                        <option class="lang-ar">صيانة وإصلاح أعطال</option>
+                        <option class="lang-en">Spare Parts Replacement</option>
+                        <option class="lang-ar">قطع غيار ومحركات</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="lang-en">Door Type</label>
+                    <label class="lang-ar">نوع الباب</label>
+                    <select>
+                        <option class="lang-en">Roll-Up / Shutter Door</option>
+                        <option class="lang-ar">باب رول / شتر</option>
+                        <option class="lang-en">Overhead Sectional Door</option>
+                        <option class="lang-ar">باب مقطعي (أوفر هيد)</option>
+                        <option class="lang-en">Automatic Sliding Glass Door</option>
+                        <option class="lang-ar">باب سحاب زجاجي</option>
+                        <option class="lang-en">Parking Barrier / Gate</option>
+                        <option class="lang-ar">حاجز مواقف / بوابة</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span class="lang-en">Submit Request</span>
+                    <span class="lang-ar">إرسال الطلب</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Floating Sticky WhatsApp Button -->
+    <a id="floatingWhatsappBtn" href="https://wa.me/966500000000?text=Hello%20Nur%20Shafi%20Contracting%2C%20I%20am%20contacting%20you%20from%20your%20website%20regarding%20an%20automatic%20door%20inquiry%20in%20Riyadh." target="_blank" class="floating-whatsapp">
+        💬 <span class="lang-en">WhatsApp Us</span><span class="lang-ar">تواصل عبر الواتساب</span>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Nur Shafi Contracting Co. — Automatic Door Solutions Division. All rights reserved.</p>
+        <p style="margin-top: 5px; font-size: 0.85rem; color: #64748b;">automaticdoorsolution.ksa@nurshaficontracting.sale</p>
+    </footer>
+
+    <!-- Interactive Toggle JavaScript -->
+    <script>
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            const langBtn = document.getElementById('langToggle');
+            const heroWaBtn = document.getElementById('heroWhatsappBtn');
+            const floatWaBtn = document.getElementById('floatingWhatsappBtn');
+
+            // Set your Saudi phone number here (without '+' or '00')
+            const phone = "966500000000";
+
+            const msgEN = encodeURIComponent("Hello Nur Shafi Contracting, I am contacting you from your website regarding an automatic door inquiry in Riyadh.");
+            const msgAR = encodeURIComponent("السلام عليكم شركة نور شافي للمقاولات، أود الاستفسار عن خدمات الأبواب الأوتوماتيكية في الرياض.");
+
+            if (htmlTag.getAttribute('dir') === 'ltr') {
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                langBtn.textContent = 'English';
+                if (heroWaBtn) heroWaBtn.href = `https://wa.me/${phone}?text=${msgAR}`;
+                if (floatWaBtn) floatWaBtn.href = `https://wa.me/${phone}?text=${msgAR}`;
+            } else {
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+                langBtn.textContent = 'العربية';
+                if (heroWaBtn) heroWaBtn.href = `https://wa.me/${phone}?text=${msgEN}`;
+                if (floatWaBtn) floatWaBtn.href = `https://wa.me/${phone}?text=${msgEN}`;
+            }
+        }
+    </script>
+</body>
+</html>
